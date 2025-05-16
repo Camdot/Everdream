@@ -1,3 +1,4 @@
+using Content.Server.Atmos.Monitor.Components;
 // SPDX-FileCopyrightText: 2022 Flipp Syder
 // SPDX-FileCopyrightText: 2022 Paul Ritter
 // SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
@@ -25,7 +26,6 @@
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Server.Atmos.Monitor.Components;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.DeviceLinking.Systems;
 using Content.Server.DeviceNetwork;
@@ -375,8 +375,12 @@ public sealed class AirAlarmSystem : EntitySystem
         switch (args.Data)
         {
             case GasVentPumpData ventData:
-                foreach (string addr in component.VentData.Keys)
+                // Begin L5 - flowmos
+                foreach (var (addr, targetVentData) in component.VentData)
                 {
+                    if (ventData.VentFlowmosMode != targetVentData.VentFlowmosMode)
+                        continue;
+                    // End L5
                     SetData(uid, addr, args.Data);
                 }
                 break;

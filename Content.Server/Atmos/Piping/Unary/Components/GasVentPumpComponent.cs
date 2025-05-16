@@ -16,6 +16,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Atmos.Piping.Unary.Components;
 using Content.Shared.DeviceLinking;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using static Content.Shared.Atmos.Piping.Unary.Components.GasVentPumpData;
 
 namespace Content.Server.Atmos.Piping.Unary.Components
 {
@@ -151,6 +152,10 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         public float DepressurizePressure = 0;
         #endregion
 
+        // L5 - flowmos
+        [DataField]
+        public VentPumpFlowmos Flowmos { get; set; } = VentPumpFlowmos.Default;
+
         public GasVentPumpData ToAirAlarmData()
         {
             return new GasVentPumpData
@@ -160,7 +165,8 @@ namespace Content.Server.Atmos.Piping.Unary.Components
                 PumpDirection = PumpDirection,
                 PressureChecks = PressureChecks,
                 ExternalPressureBound = ExternalPressureBound,
-                InternalPressureBound = InternalPressureBound
+                InternalPressureBound = InternalPressureBound,
+                VentFlowmosMode = Flowmos, // L5 - flowmos
             };
         }
 
@@ -172,6 +178,7 @@ namespace Content.Server.Atmos.Piping.Unary.Components
             PressureChecks = data.PressureChecks;
             ExternalPressureBound = data.ExternalPressureBound;
             InternalPressureBound = data.InternalPressureBound;
+            Flowmos = data.VentFlowmosMode; // L5 - flowmos
         }
     }
 }
