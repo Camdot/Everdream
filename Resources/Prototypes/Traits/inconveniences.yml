@@ -87,6 +87,7 @@
         - XenoglossyPower
         # - RemoveSpeciesLanguage # DEN - Remove species language traits
         # - RemoveSpeciesLanguageLight # DEN - Remove species language traits
+        - HypnoglossyPower # TheDen
     - !type:CharacterItemGroupRequirement
       group: TraitsMuted
     - !type:CharacterJobRequirement
@@ -118,6 +119,7 @@
         - XenoglossyPower
         # - RemoveSpeciesLanguage # DEN - Remove species language traits
         # - RemoveSpeciesLanguageLight # DEN - Remove species language traits
+        - HypnoglossyPower # TheDen
     - !type:CharacterItemGroupRequirement
       group: TraitsMuted
     - !type:CharacterJobRequirement

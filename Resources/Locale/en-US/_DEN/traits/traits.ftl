@@ -166,3 +166,13 @@ trait-name-MonochromaticVision = Monochromatic Vision
 trait-description-MonochromaticVision =
     Either through unique anatomy or perhaps damage, you are no longer able to perceive color.
     You will see the entire world in shades of gray.
+
+trait-name-HypnoglossyPower = Hypnoglossy
+trait-description-HypnoglossyPower =
+    An advanced psionic discipline combining the powers of hypnosis and xenoglossy.
+    It allows you to speak "psychomandates" that bypass conscious thought and settle directly into the mind.
+    Vulnerable subjects who hear such commands act without hesitation, their bodies obeying before reason can intervene.
+    When the effect fades, they may remember their actions but struggle to explain why they performed them.
+    Some possess a natural resistance to this power, while others can sense its subtle influence.
+    Unlike hypnosis, these commands do not reshape the mind—they impose only brief, reflexive compulsions.
+    This power does not reduce your ability to gain new powers.
