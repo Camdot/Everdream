@@ -9,3 +9,9 @@
   statusUrl: "http://ss14.everdream.space:1212/status"
   connectAddress: "ss14://ss14.everdream.space:1212"
   displayName: hub-server-everdream-name
+
+- type: hubServer
+  id: lagrange
+  statusUrl: "http://lagrange14.com:1212/status"
+  connectAddress: "ss14://lagrange14.com:1212"
+  displayName: hub-server-lagrange-name
