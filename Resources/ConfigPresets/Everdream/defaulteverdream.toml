@@ -10,7 +10,7 @@ enabled = true
 [net]
 tickrate = 30
 # do not touch
-port = 1312
+port = 1212
 # Currently debugging net issues, these are commented out for now
 # sendbuffersize = 262142
 # receivebuffersize = 262142
@@ -26,7 +26,7 @@ bug_report = "https://github.com/Samsterious/TheDen/issues"
 
 [server]
 id = "everdream"
-content_id = "everdream"
+content_id = "salvation"
 
 [game]
 hostname = "The Everdream"
@@ -93,12 +93,12 @@ max_message_length = 30000
 max_announcement_length = 1000
 
 [loki]
-enabled = true
+enabled = false
 name = "everdream"
 address = "http://localhost:3100"
 
 [metrics]
-enabled = true
+enabled = false
 host = "localhost"
 port = 9091
 
