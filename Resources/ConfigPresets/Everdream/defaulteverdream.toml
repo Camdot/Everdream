@@ -1,0 +1,109 @@
+# SPDX-FileCopyrightText: 2026 yule
+#
+# SPDX-License-Identifier: MIT
+
+[log]
+path = "logs"
+format = "log_%(date)s-%(time)s.txt"
+enabled = true
+
+[net]
+tickrate = 30
+# do not touch
+port = 1312
+# Currently debugging net issues, these are commented out for now
+# sendbuffersize = 262142
+# receivebuffersize = 262142
+sendbuffersize = 524284
+
+[status]
+enabled = true
+
+[infolinks]
+
+github = "https://github.com/Samsterious/TheDen/tree/main"
+bug_report = "https://github.com/Samsterious/TheDen/issues"
+
+[server]
+id = "everdream"
+content_id = "everdream"
+
+[game]
+hostname = "The Everdream"
+desc = "The Everdream is an 18+ roleplay-focused server dedicated to giving you the freedom express your character in all their strange joy."
+soft_max_players = 20
+auto_eat_drinks = true
+auto_eat_food = true
+loadouts_points = 100
+traits_default_points = 100
+traits_max = 100
+defaultpreset = "greenshift"
+lobbyduration = 600
+maxcharacterslots = 100
+role_whitelist = false
+role_timers = false
+
+[hub]
+# Set to true to show this server on the public server list
+# Before enabling this, read: https://docs.spacestation14.io/hosts/hub-rules
+advertise = false
+# Comma-separated list of tags, useful for categorizing your server.
+tags = "18+,lang:en-US,rp:med,region:am_n_w,no_tag_infer"
+# Comma-separated list of URLs of hub servers to advertise to.
+hub_urls = ""
+
+[whitelist]
+enabled = true
+
+[admin]
+see_own_notes = false
+deadmin_on_join = false
+new_player_threshold = 600
+use_discord_role_color = true
+use_discord_role_name = true
+bwoink_use_admin_ooc_color = true
+
+[events]
+ramping_average_chaos = 0.65
+ramping_average_end_time = 60
+
+[ghost]
+respawn_max_players = 120
+allow_same_character = true
+
+[build]
+fork_id = "everdream"
+
+[vote]
+autovote_enabled = true
+
+[shuttle]
+arrivals_planet = false
+recall_turning_point = 0
+arrivals_returns = true
+mass_limit = 0
+auto_call_time = 0
+
+[ic]
+restricted_names = false
+name_case = false
+
+[chat]
+max_message_length = 30000
+max_announcement_length = 1000
+
+[loki]
+enabled = true
+name = "everdream"
+address = "http://localhost:3100"
+
+[metrics]
+enabled = true
+host = "localhost"
+port = 9091
+
+[atmos]
+space_wind = false
+
+[reclaimer]
+allow_gibbing = false
