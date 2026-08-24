@@ -37,7 +37,6 @@ public sealed partial class PumpControl : BoxContainer
     private FloatSpinBox _externalBound => CExternalBound;
     private FloatSpinBox _internalBound => CInternalBound;
 	private Button _copySettings => CCopySettings;
-    private Button _copySettings => CCopySettings;
     private OptionButton _flowmosMode => CFlowmosMode; // L5 - flowmos
 
     public PumpControl(GasVentPumpData data, string address)

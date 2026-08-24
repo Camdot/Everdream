@@ -14,7 +14,6 @@ public sealed partial class GasVentPumpData
         VentFlowmosMode = VentPumpFlowmos.Inlet,
         ExternalPressureBound = Atmospherics.OneAtmosphere + Atmospherics.AirVentPressureDelta,
         InternalPressureBound = 0f,
-        PressureLockoutOverride = false,
     };
 
     public static GasVentPumpData FilterOutletPreset = new()
@@ -25,7 +24,6 @@ public sealed partial class GasVentPumpData
         VentFlowmosMode = VentPumpFlowmos.Outlet,
         ExternalPressureBound = Atmospherics.OneAtmosphere - Atmospherics.AirVentPressureDelta,
         InternalPressureBound = 0f,
-        PressureLockoutOverride = false,
     };
 
     public static GasVentPumpData FilterWideInletPreset = new()
@@ -36,7 +34,6 @@ public sealed partial class GasVentPumpData
         VentFlowmosMode = VentPumpFlowmos.Inlet,
         ExternalPressureBound = Atmospherics.OneAtmosphere + Atmospherics.AirVentWideFilterPressureDelta,
         InternalPressureBound = 0f,
-        PressureLockoutOverride = false,
     };
 
     public static GasVentPumpData FilterWideOutletPreset = new()
@@ -47,7 +44,6 @@ public sealed partial class GasVentPumpData
         VentFlowmosMode = VentPumpFlowmos.Outlet,
         ExternalPressureBound = Atmospherics.OneAtmosphere - Atmospherics.AirVentWideFilterPressureDelta,
         InternalPressureBound = 0f,
-        PressureLockoutOverride = false,
     };
 
     // FilterInlet but just disabled
@@ -59,7 +55,6 @@ public sealed partial class GasVentPumpData
         VentFlowmosMode = VentPumpFlowmos.Inlet,
         ExternalPressureBound = Atmospherics.OneAtmosphere + Atmospherics.AirVentPressureDelta,
         InternalPressureBound = 0f,
-        PressureLockoutOverride = false,
     };
 
     // FilterOutlet but external pressure bound set to 0 kPa
@@ -71,7 +66,6 @@ public sealed partial class GasVentPumpData
         VentFlowmosMode = VentPumpFlowmos.Outlet,
         ExternalPressureBound = 0f,
         InternalPressureBound = 0f,
-        PressureLockoutOverride = false,
     };
 
     // FilterInlet but pressure lockout overriden and max external pressure bound
@@ -83,7 +77,6 @@ public sealed partial class GasVentPumpData
         VentFlowmosMode = VentPumpFlowmos.Inlet,
         ExternalPressureBound = Atmospherics.OneAtmosphere * 50,
         InternalPressureBound = 0f,
-        PressureLockoutOverride = true,
     };
 
     // FilterOutlet but disabled
@@ -95,7 +88,6 @@ public sealed partial class GasVentPumpData
         VentFlowmosMode = VentPumpFlowmos.Outlet,
         ExternalPressureBound = Atmospherics.OneAtmosphere - Atmospherics.AirVentPressureDelta,
         InternalPressureBound = 0f,
-        PressureLockoutOverride = false,
     };
 
     [Flags]
