@@ -43,6 +43,9 @@ maxcharacterslots = 100
 role_whitelist = false
 role_timers = false
 
+[ooc]
+enable_during_round = true
+
 [hub]
 # Set to true to show this server on the public server list
 # Before enabling this, read: https://docs.spacestation14.io/hosts/hub-rules
