@@ -110,6 +110,3 @@ space_wind = false
 
 [reclaimer]
 allow_gibbing = false
-
-[denu]
-auto_formatter_enabled = true
