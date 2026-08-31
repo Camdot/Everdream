@@ -135,6 +135,24 @@
         shader: unshaded
         visible: false
         map: ["light"]
+  - type: SolutionContainerManager
+    solutions:
+      basin:
+        maxVol: 10
+  - type: SolutionPurge
+    solution: basin
+    quantity: 0.1
+  - type: MixableSolution
+    solution: basin
+  - type: RefillableSolution
+    solution: basin
+  - type: ExaminableSolution
+    solution: basin
+  - type: SolutionItemStatus
+    solution: basin
+  - type: SolutionDependentGasProducer
+    solution: basin
+  - type: ItemToggleSolutionDependentGasProducer
 
 - type: entity
   parent: [ BaseSignDirectional, BasePsionic ] # So it's technically wall decor, but whatever
@@ -284,6 +302,24 @@
         shader: unshaded
         visible: false
         map: ["light"]
+  - type: SolutionContainerManager
+    solutions:
+      basin:
+        maxVol: 10
+  - type: SolutionPurge
+    solution: basin
+    quantity: 0.1
+  - type: MixableSolution
+    solution: basin
+  - type: RefillableSolution
+    solution: basin
+  - type: ExaminableSolution
+    solution: basin
+  - type: SolutionItemStatus
+    solution: basin
+  - type: SolutionDependentGasProducer
+    solution: basin
+  - type: ItemToggleSolutionDependentGasProducer
 
 - type: entity
   parent: SomberFireplaceWarm
@@ -301,6 +337,24 @@
         shader: unshaded
         visible: false
         map: ["light"]
+  - type: SolutionContainerManager
+    solutions:
+      basin:
+        maxVol: 10
+  - type: SolutionPurge
+    solution: basin
+    quantity: 0.1
+  - type: MixableSolution
+    solution: basin
+  - type: RefillableSolution
+    solution: basin
+  - type: ExaminableSolution
+    solution: basin
+  - type: SolutionItemStatus
+    solution: basin
+  - type: SolutionDependentGasProducer
+    solution: basin
+  - type: ItemToggleSolutionDependentGasProducer
 
 - type: entity
   parent: SomberHangingBrazier
