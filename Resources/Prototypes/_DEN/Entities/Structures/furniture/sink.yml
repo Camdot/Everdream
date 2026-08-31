@@ -8,7 +8,7 @@
   components:
   - type: Sprite
     drawdepth: SmallObjects
-    sprite: _DEN/Structures/Furniture/sombersink.rsi\
+    sprite: _DEN/Structures/Furniture/sombersink.rsi
     layers:
       - state: sink
       - map: [ "enum.SolutionContainerLayers.Fill" ]
