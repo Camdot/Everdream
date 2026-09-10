@@ -99,7 +99,7 @@
   - type: ComplexInteraction
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/burrower.rsi
+    sprite: _RMC14/Mobs/Xenos/burrower.rsi  # DeltaV - Port RMC Sprites
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
@@ -125,16 +125,19 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      150: Dead # DeltaV - Was 50
+      250: Critical
+      350: Dead # DeltaV - Was 50
   - type: SlowOnDamage
     speedModifierThresholds:
       75: 0.8
       125: 0.5
+      200: 0.3
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
     bloodReagent: FluorosulfuricAcid
-    bloodMaxVolume: 650
+    maxBleedAmount: 0
+    bloodMaxVolume: 25
   - type: MeleeWeapon
     altDisarm: false
     angle: 0
@@ -142,7 +145,7 @@
      collection: AlienClaw
     animation: WeaponArcBite
     damage:
-# Begin Delta V Changes
+# Begin DeltaV Changes
       types:
         Slash: 12
         Structural: 35
@@ -204,21 +207,29 @@
     understands:
     - Xeno
   - type: NightVision # Goobstation - Nigthvision
-    color: "#6528c9"
+    color: "#808080"
     activateSound: null
     deactivateSound: null
   - type: ThermalVision # Goobstation - Thermal vision
-    color: "#6528c9"
+    color: "#808080"
   - type: Fauna # Lavaland Change
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 800
+        behaviors:
+        - !type:GibBehavior { }
 
 - type: entity
   name: Praetorian
   parent: MobXeno
-  id: MobXenoPraetorianNPC # Delta V - These no longer inherit the ghost takeover comp
+  id: MobXenoPraetorianNPC # DeltaV - These no longer inherit the ghost takeover comp
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/praetorian.rsi
+    sprite: _RMC14/Mobs/Xenos/praetorian.rsi # DeltaV - Port RMC Sprites
     offset: 0,0.4
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -226,7 +237,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      250: Dead  # DeltaV - Was 100
+      300: Critical
+      400: Dead  # DeltaV - Was 100
   - type: Stamina
     critThreshold: 300
   - type: SlowOnDamage
@@ -247,16 +259,19 @@
   - type: MeleeWeapon # DeltaV - Make Xenos Scary
     damage:
       types:
-        Slash: 20
+        Slash: 15
+  - type: FootstepModifier #DeltaV - Make xenos walk loud
+    footstepSoundCollection:
+      collection: FootstepQueenXeno
 
 - type: entity
   name: Drone
-  parent: MobXeno
-  id: MobXenoDroneNPC # Delta V - These no longer inherit the ghost takeover comp
+  parent: [ MobXeno, BaseWeedSpreadingXeno]
+  id: MobXenoDroneNPC # DeltaV - These no longer inherit the ghost takeover comp
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/drone.rsi
+    sprite: _RMC14/Mobs/Xenos/drone.rsi # DeltaV - Port RMC Sprites
     offset: 0,0.2
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -264,6 +279,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
+      130: Critical
       160: Dead # DeltaV - Was 80
   - type: SlowOnDamage
     speedModifierThresholds:
@@ -292,11 +308,11 @@
 - type: entity
   name: Queen
   parent: MobXeno
-  id: MobXenoQueenNPC # Delta V - These no longer inherit the ghost takeover comp
+  id: MobXenoQueenNPC # DeltaV - These no longer inherit the ghost takeover comp
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/queen.rsi
+    sprite: _RMC14/Mobs/Xenos/queen.rsi # DeltaV - Port RMC Sprites
     offset: 0,0.4
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -304,7 +320,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      600: Dead # DeltaV - Was 300
+      600: Critical
+      700: Dead # DeltaV - Was 300
   - type: SlowOnDamage
     speedModifierThresholds:
       300: 0.9
@@ -329,9 +346,10 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Tag
-    tags:
-    - CannotSuicide
+  - type: FootstepModifier # DeltaV - Make xenos walk loud
+    footstepSoundCollection:
+      collection: FootstepQueenXeno
+  # Begin DeltaV additions
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -343,11 +361,11 @@
 - type: entity
   name: Ravager
   parent: MobXeno
-  id: MobXenoRavagerNPC # Delta V - These no longer inherit the ghost takeover comp
+  id: MobXenoRavagerNPC # DeltaV - These no longer inherit the ghost takeover comp
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/ravager.rsi
+    sprite: _RMC14/Mobs/Xenos/ravager.rsi # DeltaV - Port RMC Sprites
     offset: 0,0.5
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -355,16 +373,17 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead # DeltaV - Was 100
+      300: Critical
+      350: Dead # DeltaV - Was 100
   - type: MovementSpeedModifier
-    baseSprintSpeed: 4
+    baseSprintSpeed: 5 # DeltaV - Was 4
   - type: MeleeWeapon
-    attackRate: 2 # DeltaV - One of the deadliest if you get too close
+    attackRate: 1.75 # DeltaV - One of the deadliest if you get too close
     damage:
 # Begin DeltaV Changes
      types:
-       Slash: 20
-       Structural: 40
+       Slash: 15
+       Structural: 10
 # End DeltaV Changes
   - type: SlowOnDamage
     speedModifierThresholds:
@@ -385,11 +404,11 @@
 - type: entity
   name: Runner
   parent: MobXeno
-  id: MobXenoRunnerNPC # Delta V - These no longer inherit the ghost takeover comp
+  id: MobXenoRunnerNPC # DeltaV - These no longer inherit the ghost takeover comp
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/runner.rsi
+    sprite: _RMC14/Mobs/Xenos/runner.rsi # DeltaV - Port RMC Sprites
     offset: 0,0.6
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -417,7 +436,8 @@
   - type: MobThresholds # DeltaV - Make Xenos Scary
     thresholds:
       0: Alive
-      125: Dead
+      180: Critical #DeltaV - Make Xenos Scary
+      240: Dead
 
 - type: entity
   name: Rouny
@@ -438,11 +458,11 @@
 - type: entity
   name: Spitter
   parent: MobXeno
-  id: MobXenoSpitterNPC # Delta V - These no longer inherit the ghost takeover comp
+  id: MobXenoSpitterNPC # DeltaV - These no longer inherit the ghost takeover comp
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Aliens/Xenos/spitter.rsi
+    sprite: _RMC14/Mobs/Xenos/spitter.rsi # DeltaV - Port RMC Sprites
     offset: 0,0.3
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -450,7 +470,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead # DeltaV - Was 50
+      300: Dead # DeltaV - Was 50
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.8
@@ -465,7 +485,7 @@
     capacity: 1
     count: 1
   - type: Gun
-    fireRate: 0.75
+    fireRate: 1 # DeltaV - was 0.75
     useKey: false
     selectedMode: FullAuto
     availableModes:
@@ -476,7 +496,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.45
+          radius: 0.65 # DeltaV - was 0.45
         density: 235
         mask:
         - MobMask
