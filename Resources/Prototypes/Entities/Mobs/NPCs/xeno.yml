@@ -266,7 +266,7 @@
 
 - type: entity
   name: Drone
-  parent: [ MobXeno, BaseWeedSpreadingXeno]
+  parent: MobXeno
   id: MobXenoDroneNPC # DeltaV - These no longer inherit the ghost takeover comp
   components:
   - type: Sprite
