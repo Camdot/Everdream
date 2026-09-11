@@ -313,6 +313,7 @@
   blacklist:
     tags:
     - SiliconEmotes
+    - XenoEmotes
   chatMessages: ["chat-emote-msg-deathgasp"]
   chatTriggers:
   - deathgasp

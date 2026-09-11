@@ -202,3 +202,15 @@
     - flutters his wings
     - flutters her wings
     - flutters their wings
+
+- type: emote
+  id: XenoDeathgasp
+  name: chat-emote-name-deathgasp
+  category: Vocal
+  icon: Interface/Emotes/deathgasp.png
+  whitelist:
+    tags:
+    - XenoEmotes
+  chatMessages: [ "cm-xeno-death-gasp" ]
+  chatTriggers:
+  - xdeathgasp

@@ -104,7 +104,7 @@
       proto: BulletAcid
       capacity: 500
     - type: Gun
-      fireRate: 1
+      fireRate: 0.5
       selectedMode: FullAuto
       soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
     - type: HTN

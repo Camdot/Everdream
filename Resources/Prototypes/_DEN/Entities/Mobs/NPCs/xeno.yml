@@ -1,0 +1,41 @@
+- type: entity
+  name: Parasite
+  id: MobXenoParasite
+  parent: MobTick
+  suffix: Xeno
+  description: A fashionable facial accessory for the over curious spacer.
+  components:
+  - type: Xeno
+  - type: NpcFactionMember
+    factions:
+    - Xeno
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 3
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+      sprite: _RMC14/Mobs/Xenos/parasite.rsi
+      scale: 0.8, 0.8
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      5: Dead
+  - type: Bloodstream
+    bloodReagent: FluorosulfuricAcid
+    maxBleedAmount: 1
+    bloodMaxVolume: 50
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: FluorosulfuricAcid
+          Quantity: 5
