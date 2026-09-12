@@ -22,31 +22,37 @@ public sealed partial class SolutionDependentGasProducerComponent : Component
     /// <summary>
     /// The gas to release.
     /// </summary>
+    [DataField]
     public Gas ReleasedGas = Gas.WaterVapor;
 
     /// <summary>
     /// The amount of gas released.
     /// </summary>
+    [DataField]
     public float ReleaseMoleAmount = 1f;
 
     /// <summary>
     /// The temperature of the released gas.
     /// </summary>
+    [DataField]
     public float Temperature = 315.15f;
 
     /// <summary>
     /// The name of the solution to read.
     /// </summary>
+    [DataField(required: true)]
     public string Solution = string.Empty;
 
     /// <summary>
     /// The reagent that must be in the solution to produce gas.
     /// </summary>
+    [DataField]
     public ProtoId<ReagentPrototype> Reagent = "Water";
 
     /// <summary>
     /// How long it takes to produce one batch of gas.
     /// </summary>
+    [DataField]
     public TimeSpan Duration = TimeSpan.FromSeconds(1);
 
     /// <summary>

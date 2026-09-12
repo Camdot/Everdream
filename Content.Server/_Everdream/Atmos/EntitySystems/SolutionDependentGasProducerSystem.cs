@@ -66,7 +66,7 @@ public sealed class SolutionDependentGasProducerSystem : EntitySystem
     {
         var environment = _atmosphere.GetContainingMixture(uid, true, true) ?? GasMixture.SpaceGas;
 
-        environment.Temperature += (component.ReleaseMoleAmount * component.Temperature + environment.TotalMoles * environment.Temperature) / (environment.TotalMoles + component.ReleaseMoleAmount);
+        environment.Temperature = component.Temperature;
         environment.AdjustMoles(component.ReleasedGas, component.ReleaseMoleAmount);
     }
 }
