@@ -12,28 +12,49 @@ namespace Content.Server._Everdream.Speech.EntitySystems;
 /// </summary>
 public sealed class GaggedAccentSystem : EntitySystem
 {
-    private static readonly Regex RegexCh = new(@"ch", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexCk = new(@"ck", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexDg = new(@"dg", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexPh = new(@"ph", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexSh = new(@"sh", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexTh = new(@"th", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexZh = new(@"zh", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexC = new(@"c", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexD = new(@"d", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexJ = new(@"j", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexK = new(@"k", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexL = new(@"l", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexN = new(@"n", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexP = new(@"p", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexQ = new(@"q", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexR = new(@"r", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexS = new(@"s", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexT = new(@"t", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexV = new(@"v", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexW = new(@"w", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexX = new(@"x", RegexOptions.IgnoreCase);
-    private static readonly Regex RegexZ = new(@"z", RegexOptions.IgnoreCase);
+    // Don't @ me. I know. This code infuriates me, too.
+    private static readonly Regex RegexCh = new(@"ch");
+    private static readonly Regex RegexCk = new(@"ck");
+    private static readonly Regex RegexDg = new(@"dg");
+    private static readonly Regex RegexPh = new(@"ph");
+    private static readonly Regex RegexSh = new(@"sh");
+    private static readonly Regex RegexTh = new(@"th");
+    private static readonly Regex RegexZh = new(@"zh");
+    private static readonly Regex RegexC = new(@"c");
+    private static readonly Regex RegexD = new(@"d");
+    private static readonly Regex RegexJ = new(@"j");
+    private static readonly Regex RegexK = new(@"k");
+    private static readonly Regex RegexL = new(@"l");
+    private static readonly Regex RegexN = new(@"n");
+    private static readonly Regex RegexP = new(@"p");
+    private static readonly Regex RegexQ = new(@"q");
+    private static readonly Regex RegexR = new(@"r");
+    private static readonly Regex RegexS = new(@"s");
+    private static readonly Regex RegexT = new(@"t");
+    private static readonly Regex RegexV = new(@"v");
+    private static readonly Regex RegexX = new(@"x");
+    private static readonly Regex RegexZ = new(@"z");
+    private static readonly Regex RegexChCap = new(@"Ch");
+    private static readonly Regex RegexCkCap = new(@"Ck");
+    private static readonly Regex RegexDgCap = new(@"Dg");
+    private static readonly Regex RegexPhCap = new(@"Ph");
+    private static readonly Regex RegexShCap = new(@"Sh");
+    private static readonly Regex RegexThCap = new(@"Th");
+    private static readonly Regex RegexZhCap = new(@"Zh");
+    private static readonly Regex RegexCCap = new(@"C");
+    private static readonly Regex RegexDCap = new(@"D");
+    private static readonly Regex RegexJCap = new(@"J");
+    private static readonly Regex RegexKCap = new(@"K");
+    private static readonly Regex RegexLCap = new(@"L");
+    private static readonly Regex RegexNCap = new(@"N");
+    private static readonly Regex RegexPCap = new(@"P");
+    private static readonly Regex RegexQCap = new(@"Q");
+    private static readonly Regex RegexRCap = new(@"R");
+    private static readonly Regex RegexSCap = new(@"S");
+    private static readonly Regex RegexTCap = new(@"T");
+    private static readonly Regex RegexVCap = new(@"V");
+    private static readonly Regex RegexXCap = new(@"X");
+    private static readonly Regex RegexZCap = new(@"Z");
 
     public override void Initialize()
     {
@@ -46,7 +67,7 @@ public sealed class GaggedAccentSystem : EntitySystem
     {
         var msg = message;
 
-        // Obviously a dictionary would be way cleaner but I can't be bothered to write an iterator for some silly kink code.
+        // I can't be bothered to write an iterator for some silly kink code.
         msg = RegexCh.Replace(msg, "h");
         msg = RegexCk.Replace(msg, "gh");
         msg = RegexDg.Replace(msg, "gh");
@@ -68,6 +89,27 @@ public sealed class GaggedAccentSystem : EntitySystem
         msg = RegexV.Replace(msg, "f");
         msg = RegexX.Replace(msg, "gh");
         msg = RegexZ.Replace(msg, "f");
+        msg = RegexChCap.Replace(msg, "H");
+        msg = RegexCkCap.Replace(msg, "Gh");
+        msg = RegexDgCap.Replace(msg, "Gh");
+        msg = RegexPhCap.Replace(msg, "F");
+        msg = RegexShCap.Replace(msg, "Fh");
+        msg = RegexThCap.Replace(msg, "F");
+        msg = RegexZhCap.Replace(msg, "Fh");
+        msg = RegexCCap.Replace(msg, "Yh");
+        msg = RegexDCap.Replace(msg, "Gh");
+        msg = RegexJCap.Replace(msg, "Gh");
+        msg = RegexKCap.Replace(msg, "Gh");
+        msg = RegexLCap.Replace(msg, "W");
+        msg = RegexNCap.Replace(msg, "M");
+        msg = RegexPCap.Replace(msg, "Bh");
+        msg = RegexQCap.Replace(msg, "Gh");
+        msg = RegexRCap.Replace(msg, "Wh");
+        msg = RegexSCap.Replace(msg, "F");
+        msg = RegexTCap.Replace(msg, "G");
+        msg = RegexVCap.Replace(msg, "F");
+        msg = RegexXCap.Replace(msg, "Gh");
+        msg = RegexZCap.Replace(msg, "F");
 
         return msg;
     }
