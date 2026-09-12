@@ -259,7 +259,7 @@
   id: SomberFireplaceWarm
   suffix: Warm Fire, Signal-Friendly
   description: "An avant-garde fireplace shaped like an eye."
-  categories: [ HideSpawnMenu ] # This one isn't for saunas and doesn't match the other warm fire items, so it's best not to confuse people about why the set seems incomplete
+  categories: [] # This one isn't for saunas and doesn't match the other warm fire items, so it's best not to confuse people about why the set seems incomplete
   components:
   - type: Sprite
     sprite: _DEN/Structures/Decoration/somberfireplacewarm.rsi
