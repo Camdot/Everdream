@@ -169,7 +169,7 @@
     containers:
       ItemCabinet: !type:ContainerSlot
   - type: AccessReader
-    access: [["Mantis"], ["Chaplain"]] # It would be rude otherwise
+    access: [["Mantis"], ["Chapel"]] # It would be rude otherwise
     breakOnEmag: false # It's not electronic...
     loggingDisabled: true
   - type: LockVisuals

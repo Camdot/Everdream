@@ -83,7 +83,7 @@
       path: /Audio/Ambience/Objects/shower_running.ogg
       params:
         volume: -6
-        range: 5
+        maxDistance: 5
   - type: GenericVisualizer
     visuals:
       enum.ToggleableVisuals.Enabled:

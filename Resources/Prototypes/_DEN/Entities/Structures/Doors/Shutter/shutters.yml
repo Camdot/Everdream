@@ -262,7 +262,7 @@
     changeAirtight: false
     openSound: /Audio/_DEN/Effects/fogopen.ogg
     closeSound: /Audio/_DEN/Effects/fogclose.ogg
-    openedSpriteState: "frame" # Part of the witchcraft, since the frames on these are empty
+    openSpriteState: "frame" # Part of the witchcraft, since the frames on these are empty
     closedSpriteState: "frame"
   - type: Rotatable
   - type: AnimationPlayer

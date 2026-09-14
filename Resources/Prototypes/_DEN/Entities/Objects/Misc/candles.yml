@@ -64,7 +64,6 @@
           shape:
             !type:PhysShapeCircle
             radius: 0.1
-            offset: 0,0.3125 # One pixel downward since that's closer to the base
           density: 20
           mask:
           - ItemMask

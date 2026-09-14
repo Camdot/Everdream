@@ -2122,9 +2122,6 @@
     heldPrefix: carpet-midnight
   - type: Stack
     stackType: FloorCarpetMidnight
-  - type: Tag
-    tags:
-    - CarpetMidnight
   - type: SpawnAfterInteract
     prototype: CarpetMidnight
     doAfter: 0.5
@@ -2196,9 +2193,6 @@
     heldPrefix: carpet-midnight
   - type: Stack
     stackType: FloorCarpetMidnightNarrow
-  - type: Tag
-    tags:
-    - CarpetMidnight
   - type: SpawnAfterInteract
     prototype: CarpetMidnightNarrow
     doAfter: 0.5
@@ -2946,8 +2940,6 @@
         density: 190
         mask:
         - TableMask
-    snapCardinals: false
-    noRot: false
   - type: Strap
     position: Down
     rotation: 90
@@ -5415,7 +5407,7 @@
       path: /Audio/_SHA/piano.ogg
       params:
         volume: 0
-        range: 8
+        maxDistance: 8
   - type: ItemToggleOnTrigger
   - type: TriggerOnSignal
   - type: DeviceLinkSink
