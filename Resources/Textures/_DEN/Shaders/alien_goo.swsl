@@ -136,7 +136,7 @@ void draw_inline(inout highp vec4 color) {
 
 void fragment() {
     highp vec3 col = vec3(1.0) * 1.0; // the multiplier will affect how aggressive the spill is
-    highp vec2 uv_shifted = vec2(UV.x + 0.5, UV.y + 5) * scale; // UV moved such that it's centered and below the texture (0.5, 5), scale multiplier for the zoom
+    highp vec2 uv_shifted = vec2(UV.x + 0.5, UV.y + 5.0) * scale; // UV moved such that it's centered and below the texture (0.5, 5), scale multiplier for the zoom
     highp vec2 uv_centered = vec2(UV - 0.5) * scale; // UV moved such that it's centered on the texture, scale multiplier for the zoom
     highp vec2 uv_distorted = distort(uv_centered); // distorted UV
 

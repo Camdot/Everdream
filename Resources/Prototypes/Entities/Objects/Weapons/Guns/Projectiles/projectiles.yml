@@ -1109,7 +1109,11 @@
     - type: Projectile
       damage:
         types:
-          Caustic: 15 # DeltaV - Was 5
+          Blunt: 5
+          Heat: 5 # Den
+          Caustic: 5
+    - type: StaminaDamageOnCollide # Den
+      damage: 25 # Den
     - type: Sprite
       sprite: Objects/Weapons/Guns/Projectiles/xeno_toxic.rsi
       layers:

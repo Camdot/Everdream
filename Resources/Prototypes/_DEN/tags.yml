@@ -150,3 +150,6 @@
 
 - type: Tag
   id: CivilianHoloprojector
+
+- type: Tag
+  id: XenoEmotes

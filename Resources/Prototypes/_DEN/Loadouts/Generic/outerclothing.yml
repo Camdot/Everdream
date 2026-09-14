@@ -143,3 +143,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: ClothingOuterApronCuteBarShort
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    -  ClothingOuterApronCuteBarShort
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter

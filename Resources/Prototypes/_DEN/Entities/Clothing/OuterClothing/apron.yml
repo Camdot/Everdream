@@ -102,3 +102,15 @@
       right:
       - state: inhand-right
       - state: stripes_vertical-inhand-right
+
+- type: entity
+  id: ClothingOuterApronCuteBarShort
+  parent: ClothingOuterApronCuteBar
+  suffix: Bartender, Short
+  name: apron
+  description: A cute frilly, short apron.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/OuterClothing/Misc/shortcuteapron.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/OuterClothing/Misc/shortcuteapron.rsi

@@ -102,7 +102,7 @@
   - type: GhostTakeoverAvailable
 
 - type: entity
-  name: Ravager
+  name: Lurker
   parent: MobXenoRavagerNPC
   id: MobXenoRavager
   suffix: Player

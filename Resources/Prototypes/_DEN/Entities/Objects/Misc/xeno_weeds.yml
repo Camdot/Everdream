@@ -1,0 +1,166 @@
+- type: entity
+  id: XenoWeeds
+  name: xeno weeds
+  parent: Kudzu
+  suffix: Xeno
+  description: Weird sticky black weeds. WHY ARE YOU STOPPING TO LOOK AT IT?!
+  components:
+  - type: Xeno
+  - type: Sprite
+    drawdepth: HighFloorObjects
+    sprite: _RMC14/Structures/Xeno/xeno_weeds.rsi
+    state: kudzu_node
+  - type: Kudzu
+    spriteVariants: 5
+    spreadChance: 0.5
+    damageRecovery:
+      types:
+        Slash: -0.5
+        Heat: -1.0
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.4
+    sprintSpeedModifier: 0.4
+    ignoreWhitelist:
+      components:
+        - Xeno
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - MidImpassable
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+      - trigger: !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: ["Destruction"]
+  - type: Temperature
+    heatDamage:
+      types:
+        Heat: 10
+  - type: Flammable
+    fireSpread: true
+    damage:
+      types:
+        Heat: 3
+  - type: AtmosExposed
+  - type: RandomSpawner
+    deleteSpawnerAfterSpawn: false
+    chance: 0.15
+    rareChance: 0.05
+    prototypes:
+      - XenoWeedEggBlocker
+      - MobXenoParasite
+    rarePrototypes:
+      - XenoWeedTurret
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+    reactions:
+      - reagents: [WeedKiller, PlantBGone]
+        methods: [Touch]
+        effects:
+          - !type:HealthChange
+            scaleByQuantity: true
+            damage:
+              types:
+                Heat: 10
+
+- type: entity
+  id: XenoWeedTurret
+  name: xeno acid tower
+  parent: WeaponTurretXeno
+  suffix: Xeno
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xeno/xeno_acid_pillar.rsi # Den
+    noRot: true
+    layers:
+      - state: attack # Den
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/gib1.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            FoodMeatXeno:
+              min: 3
+              max: 5
+  - type: Temperature
+    heatDamage:
+      types:
+        Heat: 10
+  - type: Flammable
+    fireSpread: true
+    damage:
+      types:
+        Heat: 3
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+    reactions:
+      - reagents: [WeedKiller, PlantBGone]
+        methods: [Touch]
+        effects:
+          - !type:HealthChange
+            scaleByQuantity: true
+            damage:
+              types:
+                Heat: 10
+
+- type: entity
+  id: XenoWeedEggBlocker
+  parent: BaseStructure
+  name: xeno egg
+  suffix: Xeno
+  description: It looks like a weird egg.
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    noRot: true
+    sprite: _RMC14/Structures/Xeno/xeno_egg.rsi
+    layers:
+    - state: egg
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Impassable
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          egg: ""
+          egg_growing: ""
+          egg_opened: ""
+          egg_exploded: ""
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
