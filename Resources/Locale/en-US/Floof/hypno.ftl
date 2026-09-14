@@ -8,7 +8,7 @@ action-name-hypno = Psionic Control
 action-description-hypno = You are able to mentally interfere with people's thoughts, and make them do your bidding.
 
 hypnosis-power-initialization-feedback = I am able to place other in a trance and have them do my bidding, cementing my will in the deepest parts of their mind.
-hypnosis-power-feedback = The air around {CAPITALIZE($entity)} shimmers hypnotically from the force of their personality"
+hypnosis-power-feedback = The air around {CAPITALIZE($entity)} shimmers hypnotically from the force of their personality.
 
 hypno-already-under = {CAPITALIZE($target)} is already under hypnosis.
 examined-hypno = Seems completely content with everything
@@ -44,3 +44,4 @@ trait-name-HypnoticGaze = Hypnotic Gaze
 trait-description-HypnoticGaze =
     Within your eyes lies the ability to place others under your control. You are capable of placing others in a trance, regardless of
     whether or not you possess any other notable psionic powers.
+    This power does not reduce your ability to gain new powers.

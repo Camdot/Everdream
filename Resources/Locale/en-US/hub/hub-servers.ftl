@@ -25,3 +25,5 @@ hub-server-salvation-name = Salvation
 hub-server-eternity-name = Eternity
 hub-server-damnation-name = Damnation
 hub-server-mapping-name = Mapping
+hub-server-everdream-name = Everdream
+hub-server-lagrange-name = Lagrange

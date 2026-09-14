@@ -114,7 +114,7 @@ namespace Content.Server.RoundEnd
         /// <summary>
         /// Should we not allow recall due to round hard end being met?
         /// </summary>
-        public bool RespectRoundHardEnd { get; set; } = true;
+        public bool RespectRoundHardEnd { get; set; } = false;
 
         private CancellationTokenSource? _countdownTokenSource;
         private CancellationTokenSource? _cooldownTokenSource;
@@ -158,7 +158,7 @@ namespace Content.Server.RoundEnd
             _hasHardEndWarningRun = false;
             _roundEndShuttleCalled = false;
 
-            RespectRoundHardEnd = true;
+            RespectRoundHardEnd = false;
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
             SetAutoCallTime();

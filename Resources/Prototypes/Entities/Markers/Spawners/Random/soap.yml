@@ -21,6 +21,8 @@
       - SoapHomemade
       - SoapNT
       - SoapDeluxe
+      - SoapSomberViolet # Den
+      - SoapSomberTeal # Den
     chance: 0.95
     rarePrototypes:
       - SoapSyndie

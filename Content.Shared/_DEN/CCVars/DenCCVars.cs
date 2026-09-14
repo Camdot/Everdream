@@ -56,7 +56,7 @@ public sealed class DenCCVars
     /// Whether the Denu's Auto Formatter starts enabled.
     /// </summary>
     public static readonly CVarDef<bool> AutoFormatterEnabled =
-        CVarDef.Create("denu.auto_formatter_enabled", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("denu.auto_formatter_enabled", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Whether to remove asterisks in Denu's auto-formatted message results.

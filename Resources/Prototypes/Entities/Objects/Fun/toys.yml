@@ -2009,6 +2009,8 @@
   - type: Tag
     tags:
     - PetWearable
+  - type: AddAccentClothing
+    accent: GaggedAccent
 
 - type: entity
   parent: BaseItem
