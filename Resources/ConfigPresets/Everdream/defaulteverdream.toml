@@ -109,3 +109,6 @@ space_wind = false
 
 [reclaimer]
 allow_gibbing = false
+
+[discord]
+news_webhook_send_during_round = true
