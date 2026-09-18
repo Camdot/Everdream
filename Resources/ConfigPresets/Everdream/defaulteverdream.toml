@@ -20,9 +20,8 @@ sendbuffersize = 524284
 enabled = true
 
 [infolinks]
-
-github = "https://github.com/Samsterious/TheDen/tree/main"
-bug_report = "https://github.com/Samsterious/TheDen/issues"
+github = "https://github.com/Dehe-Reva/Everdream/tree/main"
+bug_report = "https://github.com/Dehe-Reva/Everdream/issues"
 
 [server]
 id = "everdream"
