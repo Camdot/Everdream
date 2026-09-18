@@ -31,7 +31,7 @@ content_id = "salvation"
 [game]
 hostname = "The Everdream"
 desc = "The Everdream is an 18+ roleplay-focused server dedicated to giving you the freedom express your character in all their strange joy."
-soft_max_players = 20
+soft_max_players = 60
 auto_eat_drinks = true
 auto_eat_food = true
 loadouts_points = 100
