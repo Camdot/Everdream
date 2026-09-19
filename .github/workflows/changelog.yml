@@ -14,7 +14,7 @@ on:
   pull_request_target:
     types: [closed]
     branches:
-      - master
+      - main
 
 env:
   GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
     permissions:
       contents: write
     steps:
-    - name: Checkout Master
+    - name: Checkout Main
       uses: actions/checkout@v3
       with:
         token: ${{ secrets.BOT_TOKEN }}

@@ -12,9 +12,9 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    if: ${{ github.base_ref == 'stable' && github.actor != 'Fansana' && github.actor != 'Memeji' && github.actor != 'FoxxoTrystan' }}
+    if: ${{ github.base_ref == 'stable' && github.actor != 'Samsterious' }}
 
     steps:
     - uses: superbrothers/close-pull-request@v3
       with:
-        comment: "Thank you for contributing to Floof Station repository. Unfortunately, it looks like you submitted your pull request to the stable branch, Please move this PR to the master Branch."
+        comment: "Thank you for contributing to the Everdream repository. Unfortunately, it looks like you submitted your pull request to the stable branch, Please move this PR to the main branch."

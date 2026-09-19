@@ -26,15 +26,15 @@ name: Build & Test Debug
 
 on:
   push:
-    branches: [ master, staging, trying ]
+    branches: [ main, staging, trying ]
   merge_group:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
-    if: github.actor != 'TheDen-Bot' && github.event.pull_request.draft == false
+    if: github.actor != 'Everdream-Bot' && github.event.pull_request.draft == false
     #strategy: # using a single self-hosted runner, this will not be needed anytime soon
     #  matrix:
     #    os: [ubuntu-latest]
@@ -42,7 +42,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: Checkout Master
+    - name: Checkout Main
       uses: actions/checkout@v3.6.0
 
     - name: Setup Submodule

@@ -14,14 +14,14 @@
 name: RGA schema validator
 on:
   push:
-    branches: [ master, staging, trying ]
+    branches: [ main, staging, trying ]
   merge_group:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
 
 jobs:
   yaml-schema-validation:
-    if: github.actor != 'TheDen-Bot' && github.event.pull_request.draft == false
+    if: github.actor != 'Everdream-Bot' && github.event.pull_request.draft == false
     name: YAML RGA schema validator
     runs-on: ubuntu-latest
     steps:

@@ -10,7 +10,7 @@ on:
   pull_request_target:
     types: [closed]
     branches:
-      - master
+      - main
 
 env:
   REUSE_MESSAGE: ${{ vars.REUSE_MESSAGE }}
@@ -23,7 +23,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Master
+      - name: Checkout Main
         uses: actions/checkout@v4
         with:
           ref: ${{ vars.CHANGELOG_BRANCH }}
