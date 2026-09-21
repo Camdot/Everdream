@@ -19,9 +19,6 @@ SPDX-License-Identifier: MIT
       <PackageReference Include="YamlDotNet" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\RobustToolbox\Robust.Shared\Robust.Shared.csproj" />
-    </ItemGroup>
-
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
+  <Import Project="..\RobustToolbox\Imports\Shared.props" />
 </Project>

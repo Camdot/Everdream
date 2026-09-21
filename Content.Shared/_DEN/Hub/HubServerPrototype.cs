@@ -17,17 +17,17 @@ public sealed partial class HubServerPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     [DataField(required: true)]
-    public string StatusUrl { get; } = string.Empty;
+    public string StatusUrl { get; set; } = string.Empty;
 
     [DataField(required: true)]
-    public string ConnectAddress { get; } = string.Empty;
+    public string ConnectAddress { get; set; } = string.Empty;
 
     [DataField(required: true)]
-    public LocId DisplayName { get; }
+    public LocId DisplayName { get; set; }
 
     [DataField]
-    public bool CanConnect { get; } = true;
+    public bool CanConnect { get; set; } = true;
 }

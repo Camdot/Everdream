@@ -29,12 +29,12 @@ namespace Content.Shared.Cargo.Prototypes
     {
         /// <inheritdoc />
         [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<CargoProductPrototype>))]
-        public string[]? Parents { get; }
+        public string[]? Parents { get; set; }
 
         /// <inheritdoc />
         [NeverPushInheritance]
         [AbstractDataField]
-        public bool Abstract { get; }
+        public bool Abstract { get; set; }
 
         [DataField("name")] private string _name = string.Empty;
 
@@ -122,7 +122,7 @@ namespace Content.Shared.Cargo.Prototypes
         /// This deos not affect "forced orders", such as the cargo gifts gamerule.
         /// </summary>
         [DataField]
-        public HashSet<string>? ExcludedServers { get; } = null;
+        public HashSet<string>? ExcludedServers { get; set; } = null;
 
         // End DEN
     }

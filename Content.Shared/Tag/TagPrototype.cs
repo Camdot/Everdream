@@ -24,5 +24,5 @@ namespace Content.Shared.Tag;
 public sealed partial class TagPrototype : IPrototype
 {
     [IdDataField, ViewVariables]
-    public string ID { get; } = string.Empty;
+    public string ID { get; set; } = string.Empty;
 }

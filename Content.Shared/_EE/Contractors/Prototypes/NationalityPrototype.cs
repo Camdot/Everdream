@@ -21,19 +21,19 @@ namespace Content.Shared._EE.Contractors.Prototypes;
 public sealed partial class NationalityPrototype : IPrototype
 {
     [IdDataField, ViewVariables]
-    public string ID { get; } = string.Empty;
+    public string ID { get; set; } = string.Empty;
 
     [DataField]
-    public string NameKey { get; } = string.Empty;
+    public string NameKey { get; set; } = string.Empty;
 
     [DataField]
-    public string DescriptionKey { get; } = string.Empty;
+    public string DescriptionKey { get; set; } = string.Empty;
 
     [DataField, ViewVariables]
-    public HashSet<ProtoId<NationalityPrototype>> Allied { get; } = new();
+    public HashSet<ProtoId<NationalityPrototype>> Allied { get; set; } = new();
 
     [DataField, ViewVariables]
-    public HashSet<ProtoId<NationalityPrototype>> Hostile { get; } = new();
+    public HashSet<ProtoId<NationalityPrototype>> Hostile { get; set; } = new();
 
     [DataField]
     public List<CharacterRequirement> Requirements = new();
@@ -42,5 +42,5 @@ public sealed partial class NationalityPrototype : IPrototype
     public TraitFunction[] Functions { get; private set; } = Array.Empty<TraitFunction>();
 
     [DataField]
-    public EntProtoId PassportPrototype { get; } = new();
+    public EntProtoId PassportPrototype { get; set; } = new();
 }

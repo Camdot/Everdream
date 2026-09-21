@@ -22,7 +22,7 @@ namespace Content.Shared._Lavaland.Procedural.Prototypes;
 [Prototype]
 public sealed partial class LavalandMapPrototype : IPrototype
 {
-    [IdDataField] public string ID { get; } = default!;
+    [IdDataField] public string ID { get; set; } = default!;
 
     [DataField] public LocId Name = "lavaland-planet-name-unknown";
 
