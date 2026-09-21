@@ -18,17 +18,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     <Nullable>enable</Nullable>
     <WarningsAsErrors>nullable</WarningsAsErrors>
     <ServerGarbageCollection>true</ServerGarbageCollection>
+    <EnableNUnitRunner>false</EnableNUnitRunner>
+    <EnableMSTestRunner>false</EnableMSTestRunner>
+    <GenerateTestingPlatformEntryPoint>false</GenerateTestingPlatformEntryPoint>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Content.IntegrationTests\Content.IntegrationTests.csproj" />
-    <ProjectReference Include="..\RobustToolbox\Robust.UnitTesting\Robust.UnitTesting.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NUnit" />
     <PackageReference Include="SixLabors.ImageSharp" />
   </ItemGroup>
 
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
+  <Import Project="..\RobustToolbox\Imports\Testing.props" />
 </Project>

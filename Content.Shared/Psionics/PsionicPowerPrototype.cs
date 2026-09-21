@@ -17,7 +17,7 @@ public sealed partial class PsionicPowerPrototype : IPrototype
     ///     The ID of the psionic power to use.
     /// </summary>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     /// <summary>
     ///     The name of the psionic power.

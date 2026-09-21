@@ -27,7 +27,7 @@ namespace Content.Shared.InteractionVerbs;
 public sealed partial class InteractionPopupPrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     [DataField]
     public PopupType PopupType = PopupType.Medium;

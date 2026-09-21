@@ -25,7 +25,7 @@ public sealed partial class StoryTemplatePrototype : IPrototype
     /// Localization ID of the Fluent string that forms the structure of this story.
     /// </summary>
     [DataField(required: true)]
-    public LocId LocId { get; } = default!;
+    public LocId LocId { get; set; } = default!;
 
     /// <summary>
     /// Dictionary containing the name of each variable to pass to the template and the ID of the
@@ -34,5 +34,5 @@ public sealed partial class StoryTemplatePrototype : IPrototype
     /// dataset which can then be used in the template by <c>{$name}</c>.
     /// </summary>
     [DataField]
-    public Dictionary<string, ProtoId<LocalizedDatasetPrototype>> Variables { get; } = default!;
+    public Dictionary<string, ProtoId<LocalizedDatasetPrototype>> Variables { get; set; } = default!;
 }

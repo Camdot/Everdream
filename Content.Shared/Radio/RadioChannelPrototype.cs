@@ -36,7 +36,7 @@ public sealed partial class RadioChannelPrototype : IPrototype
     public Color Color { get; private set; } = Color.Lime;
 
     [IdDataField, ViewVariables]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     /// <summary>
     /// If channel is long range it doesn't require telecommunication server

@@ -42,11 +42,11 @@ public sealed partial class AccessGroupPrototype : IPrototype, IInheritingProtot
 
     // DEN start: I'm making this shit inheriting!!
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<AccessGroupPrototype>))]
-    public string[]? Parents { get; }
+    public string[]? Parents { get; set; }
 
     [NeverPushInheritance]
     [AbstractDataField]
-    public bool Abstract { get; }
+    public bool Abstract { get; set; }
     // End DEN
 
     public string GetAccessGroupName()

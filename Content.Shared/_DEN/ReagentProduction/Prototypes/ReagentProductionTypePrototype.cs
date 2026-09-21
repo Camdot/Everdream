@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._DEN.ReagentProduction.Prototypes;
 
 [Prototype]
-public sealed class ReagentProductionTypePrototype : IPrototype
+public sealed partial class ReagentProductionTypePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

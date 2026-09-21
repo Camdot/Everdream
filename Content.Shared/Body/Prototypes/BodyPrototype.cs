@@ -18,7 +18,7 @@ namespace Content.Shared.Body.Prototypes;
 [Prototype("body")]
 public sealed partial class BodyPrototype : IPrototype
 {
-    [IdDataField] public string ID { get; } = default!;
+    [IdDataField] public string ID { get; set; } = default!;
 
     [DataField("name")]
     public string Name { get; private set; } = "";
@@ -39,4 +39,4 @@ public sealed partial class BodyPrototype : IPrototype
 }
 
 [DataRecord]
-public sealed record BodyPrototypeSlot(EntProtoId? Part, HashSet<string> Connections, Dictionary<string, string> Organs);
+public sealed partial record BodyPrototypeSlot(EntProtoId? Part, HashSet<string> Connections, Dictionary<string, string> Organs);

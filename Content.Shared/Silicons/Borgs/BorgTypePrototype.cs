@@ -26,7 +26,7 @@ public sealed partial class BorgTypePrototype : IPrototype
     private static readonly ProtoId<SoundCollectionPrototype> DefaultFootsteps = new("FootstepBorg");
 
     [IdDataField]
-    public required string ID { get; init; }
+    public string ID { get; set; } = string.Empty;
 
     //
     // Description info (name/desc) is configured via localization strings directly.
@@ -36,7 +36,7 @@ public sealed partial class BorgTypePrototype : IPrototype
     /// The prototype displayed in the selection menu for this type.
     /// </summary>
     [DataField]
-    public required EntProtoId DummyPrototype { get; init; }
+    public EntProtoId DummyPrototype { get; set; }
 
     //
     // Functional information
