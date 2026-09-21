@@ -112,3 +112,8 @@ allow_gibbing = false
 
 [discord]
 news_webhook_send_during_round = true
+prefix = "!"
+
+[transfer]
+http = true
+http_endpoint "http://ss14.everdream.space:1212"
