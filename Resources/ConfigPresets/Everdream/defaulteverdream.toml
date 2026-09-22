@@ -116,4 +116,4 @@ prefix = "!"
 
 [transfer]
 http = true
-http_endpoint "http://ss14.everdream.space:1212"
+http_endpoint = "http://ss14.everdream.space:1212"
