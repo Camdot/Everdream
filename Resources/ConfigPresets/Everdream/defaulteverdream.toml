@@ -93,6 +93,7 @@ name_case = false
 [chat]
 max_message_length = 30000
 max_announcement_length = 1000
+rate_limit_period = 1
 
 [loki]
 enabled = false
