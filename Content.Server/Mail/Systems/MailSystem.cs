@@ -49,6 +49,7 @@ using System.Threading;
 using Content.Server.Mail.Components;
 using Content.Shared.Chat;
 using Content.Shared.Mail;
+using Content.Shared.SSDIndicator;
 using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server.Mail.Systems
@@ -630,6 +631,10 @@ namespace Content.Server.Mail.Systems
             {
                 var receiverStation = _stationSystem.GetOwningStation(receiverUid);
                 if (receiverStation != teleporterStation)
+                    continue;
+
+                TryComp<SSDIndicatorComponent>(receiverUid, out var indicator);
+                if (indicator is null || indicator.IsSSD)
                     continue;
 
                 if (TryGetMailRecipientForReceiver(receiverUid, out var recipient))
