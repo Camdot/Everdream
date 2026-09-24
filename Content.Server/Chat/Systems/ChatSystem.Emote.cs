@@ -214,13 +214,13 @@ public partial class ChatSystem
         static string TrimPunctuation(string textInput)
         {
             var trimEnd = textInput.Length;
-            while (trimEnd > 0 && char.IsPunctuation(textInput[trimEnd - 1]))
+            while (trimEnd > 0 && !char.IsLetterOrDigit(textInput[trimEnd - 1]))
             {
                 trimEnd--;
             }
 
             var trimStart = 0;
-            while (trimStart < trimEnd && char.IsPunctuation(textInput[trimStart]))
+            while (trimStart < trimEnd && !char.IsLetterOrDigit(textInput[trimStart]))
             {
                 trimStart++;
             }
